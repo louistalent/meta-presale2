@@ -21,7 +21,7 @@ export default function Presale() {
     const [allocationInput, setAllocationInput] = useState('');
     const [bitcoinPrice, setBitcoinPrice] = useState(1);
     const [state, { dispatch }] = useWebContext();
-    const { address, accounts, balance, selectedwallet, walletBalance } = state;
+    const { address, accounts, balance, selectedwallet } = state;
     const pricePerToken = 0.055;
 
     const handleAmountChange = (event) => {
@@ -350,7 +350,7 @@ export default function Presale() {
                                 <div className="top-amount">
                                     <div><p>Amount</p></div>
 
-                                    <div className='balance'>Balance: {walletBalance} BTC</div>
+                                    <div className='balance'>Balance: {balance.total} BTC</div>
                                 </div>
                                 <div className='input-amount'>
 

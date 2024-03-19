@@ -27,7 +27,6 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import toast, { Toaster } from "react-hot-toast";
 import { useWebContext } from "../context";
 
-
 const style = {
     position: "absolute",
     top: "50%",
@@ -63,8 +62,6 @@ const mobileWalletStyle = {
     fontSize: '14px',
     fontWeight:'bold'
 }
-
-
 
 export default function Ui() {
     const [state, { dispatch }] = useWebContext();
@@ -153,12 +150,10 @@ export default function Ui() {
             const result = await unisat.requestAccounts();
             const balance = await unisat.getBalance();
             setBalance(balance);
-
             dispatch({
-                type: "walletBalance",
+                type: "balance",
                 payload: balance
             });
-
             handleAccountsChanged(result);
             console.log(result)
             setConnected(true);
